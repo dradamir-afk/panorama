@@ -1,5 +1,5 @@
 ﻿
-
+//Hello wawww
 var isPlayed = false;
 // var cadr_count = 90;    //кол-во кадров
 // var cadr_width = 334;   //ширина кадра
