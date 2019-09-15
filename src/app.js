@@ -2,6 +2,7 @@ const Koa = require('koa');
 const { root, port, env, ip } = require('~/config');
 const router = require('./router');
 const http = require('http');
+const fs = require('fs-extra');
 
 const app = new Koa();
 
@@ -10,6 +11,12 @@ const pug = new (require('koa-pug'))({
     viewPath: `${root}/templates/`,
     noCache: (env === 'development')
 });
+
+const dir = '${root}/tmp';
+
+ fs.ensureDir(dir, err => {
+ console.log(err)
+ });
 
 app
     .use(require('koa-static')(`${root}/public/`, {
